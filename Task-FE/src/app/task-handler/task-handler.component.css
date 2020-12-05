@@ -1,0 +1,13 @@
+table {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.task-handler-container {
+    padding: 12px;
+}
+
+.table-scroll {
+    height: 300px;
+    overflow: scroll;
+}

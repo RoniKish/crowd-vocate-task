@@ -1,0 +1,42 @@
+<h2>Create new task</h2>
+<form [formGroup]="taskForm">
+    <div class="form-inputs">
+        <mat-form-field>
+            <input matInput placeholder="Name" formControlName="name">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Description" formControlName="description">
+        </mat-form-field>
+            
+        <mat-form-field>
+        <mat-select placeholder="Status" formControlName="status">
+            <mat-option *ngFor="let status of taskStatus" [value]="status">
+                {{status}}
+            </mat-option>
+        </mat-select>
+        </mat-form-field>
+    </div>
+    <br>
+
+    <div class="date-picker-container">
+        <mat-form-field appearance="fill">
+            <mat-label>Start date</mat-label>
+            <input matInput [matDatepicker]="startDatePicker" formControlName="startDate">
+            <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #startDatePicker></mat-datepicker>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+        <mat-label>End date</mat-label>
+        <input matInput [matDatepicker]="endDatePicker" formControlName="endDate">
+        <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #endDatePicker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <br>
+</form>
+
+<button mat-raised-button color="primary" (click)="submitForm()" [disabled]="!taskForm.valid"> Create new task</button>
+<button mat-raised-button color="primary" (click)="close()"> Close </button>
+

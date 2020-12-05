@@ -1,0 +1,12 @@
+.date-picker-container mat-form-field {
+    padding-right: 12px;
+}
+
+.form-inputs mat-form-field{
+    display: flex;
+    justify-content: center
+}
+
+button {
+    margin-right: 24px;
+}
